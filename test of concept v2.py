@@ -1,3 +1,7 @@
+
+
+#SO IF I ADD SOME TEXT HERE THIS WILL SHOW AT GITHUB HOPEFULLY!
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #"""
@@ -17,7 +21,7 @@
 #M204: Set start acceleration
 
 #scanning area in mm
-maxHeight = 3
+maxHeight = 5 # 3 ORIGINALLY
 maxWidth = 250
 minWidth = 0
 maxRotation = 200 
