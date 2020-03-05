@@ -36,14 +36,15 @@ class InputPage(QMainWindow):
         self.zRes_decimal = round((float(self.zAxisRes-self.zResolution)), self.zRes.decimals())
 
     def _3d_scan(self):
-        self.zRes_decimal2 = round(self.zRes_decimal, 1)
+        zRes_decimal = round(self.zRes_decimal, 2)    # to have a variable that can increase the steps in resolution
         for j in range(1, self.zHeight+1, self.zResolution):
-            j += self.zRes_decimal2
+            j += zRes_decimal
             if j > self.zHeight:
+                print("G1 Z", "%.2f" % j, " Y", "%.2f" % j, "   ; LAYER SHIFT", sep='')
                 break
 #            self.complete_horizontal_slice()
             print("G1 Z", "%.2f" % j,  " Y",  "%.2f" % j, "      ; LAYER SHIFT",  sep='')
-            self.zRes_decimal2 += self.zRes_decimal
+            zRes_decimal += self.zRes_decimal
 
     # movement for getting a full 2d slice in xy-plane
 
